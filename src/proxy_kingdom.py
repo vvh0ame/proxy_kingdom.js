@@ -1,8 +1,7 @@
 from requests import get
 
-
 class ProxyKingdom:
-	def __init__(self, token: str):
+	def __init__(self, token: str) -> None:
 		self.api = "https://api.proxykingdom.com"
 		self.headers = {
 			"user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36",
@@ -21,7 +20,7 @@ class ProxyKingdom:
 			country: str = None,
 			continent: str = None,
 			time_zone: str = None,
-			last_tested: str = None):
+			last_tested: str = None) -> str:
 		url = f"{self.api}/proxy?token={self.token}"
 		if address:
 			url += f"&address={address}"
